@@ -3,10 +3,10 @@ package UtilityClasses;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-
 
 //Class made for implement images into JPanels
 
@@ -16,7 +16,7 @@ public class ImagePanel extends JPanel {
 	private Image img;
 
 	public ImagePanel(Icon img) {
-		this(((ImageIcon)img).getImage());
+		this(((ImageIcon) img).getImage());
 	}
 
 	public ImagePanel(Image img) {

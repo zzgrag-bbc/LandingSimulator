@@ -16,13 +16,13 @@ import UtilityClasses.ImageLoader;
 public class TimerPanel extends JPanel {
 
 	public static JTextArea timer = new JTextArea(" 00:00:00");
-	
+
 	// Blank Pictures for Timer
 	JLabel northTimer = new JLabel(ImageLoader.loadIcon("Menupanel/north_timer.png"));
 	JLabel eastTimer = new JLabel(ImageLoader.loadIcon("Menupanel/west_east.png"));
 	JLabel southTimer = new JLabel(ImageLoader.loadIcon("Menupanel/south.png"));
 	JLabel westTimer = new JLabel(ImageLoader.loadIcon("Menupanel/west_east.png"));
-	
+
 	public TimerPanel() {
 
 		// Border & Font

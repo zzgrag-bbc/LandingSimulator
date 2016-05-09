@@ -13,6 +13,7 @@ public class Zeit {
 	static int minutenZähler = 0;
 	static String stunden = "00";
 	static int stundenZähler = 0;
+
 	public Zeit() {
 	}
 
@@ -49,7 +50,7 @@ public class Zeit {
 		TimerPanel.timer.setText(timeOutput);
 
 	}
-	
+
 	public static int getAus() {
 		return aus;
 	}

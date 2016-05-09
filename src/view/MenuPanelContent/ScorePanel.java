@@ -14,7 +14,7 @@ import UtilityClasses.ImageLoader;
 
 @SuppressWarnings("serial")
 public class ScorePanel extends JPanel {
-	
+
 	// Blank Pictures for Score
 	JLabel northScore = new JLabel(ImageLoader.loadIcon("Menupanel/north_score.png"));
 	JLabel eastScore = new JLabel(ImageLoader.loadIcon("Menupanel/west_east.png"));

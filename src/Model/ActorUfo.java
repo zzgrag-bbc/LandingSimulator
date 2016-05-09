@@ -13,5 +13,5 @@ public class ActorUfo extends Actor {
 		if (!isMoveValid())
 			turn(180);
 	}
-	
+
 }

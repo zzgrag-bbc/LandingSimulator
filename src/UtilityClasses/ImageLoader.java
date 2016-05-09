@@ -9,8 +9,7 @@ import javax.swing.ImageIcon;
 
 public class ImageLoader {
 
-	
-	//Loads Images
+	// Loads Images
 	private static final String IMAGE_LOCATION = "src/images/";
 
 	public static Image Image(String imageName) {
@@ -25,8 +24,7 @@ public class ImageLoader {
 
 	}
 
-	
-	//Loads Icons
+	// Loads Icons
 	public static Icon loadIcon(String iconName) {
 		final URL resource = ImageLoader.class.getResource("/images/" + iconName);
 

@@ -2,7 +2,9 @@ package view;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+
 import javax.swing.JWindow;
+
 import view.MenuPanelContent.MenuPanel;
 import view.PlayPanelContent.PlayPanel;
 import view.Screens.StartScreenPanel;
@@ -31,13 +33,12 @@ public class View extends JWindow {
 		PlayPanel playPanel = new PlayPanel();
 		add(playPanel, BorderLayout.CENTER);
 		pack();
-		
-		
+
 		playPanel.setUfoPosition();
 	}
 
 	public static void main(String[] args) {
-		
+
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				new View();
