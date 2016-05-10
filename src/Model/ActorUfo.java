@@ -1,6 +1,7 @@
 package Model;
 
 import ch.aplu.jgamegrid.Actor;
+import ch.aplu.jgamegrid.Location;
 
 public class ActorUfo extends Actor {
 
@@ -10,8 +11,8 @@ public class ActorUfo extends Actor {
 
 	public void act() {
 		move(1);
-		if (!isMoveValid())
-			turn(180);
+		setSlowDown(5);
+	    setDirection(Location.SOUTH);
 	}
 
 }

@@ -1,5 +1,7 @@
 package view.PlayPanelContent;
 
+import java.awt.Color;
+
 import Model.ActorLandingSpace;
 import Model.ActorLandscape;
 import Model.ActorUfo;
@@ -13,15 +15,21 @@ public class PlayPanel extends GameGrid {
 		setNbVertCells(216);
 		setNbHorzCells(320);
 		setCellSize(5);
-		// setGridColor(Color.RED);
+		setGridColor(Color.RED);
 		setBgImagePath("images/IngameScreen/background.jpg");
-
+	    setSimulationPeriod(5);
 	}
+	
+
 
 	public void setUfoPosition() {
 		ActorUfo ufo = new ActorUfo();
-		addActor(ufo, new Location(20, 20));
-		// doRun();
+		addActor(ufo, new Location(150, 20));
+		doRun();
+		
+	}
+		
+	public void setLandscapePositions() {
 
 		ActorLandscape landscape = new ActorLandscape();
 		addActor(landscape, new Location(159, 110));

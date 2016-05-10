@@ -34,6 +34,7 @@ public class View extends JWindow {
 		add(playPanel, BorderLayout.CENTER);
 		pack();
 
+		playPanel.setLandscapePositions();
 		playPanel.setUfoPosition();
 	}
 
