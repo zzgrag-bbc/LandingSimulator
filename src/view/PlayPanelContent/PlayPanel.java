@@ -17,18 +17,18 @@ public class PlayPanel extends GameGrid {
 		setCellSize(5);
 		setGridColor(Color.RED);
 		setBgImagePath("images/IngameScreen/background.jpg");
-	    setSimulationPeriod(5);
+		setSimulationPeriod(5);
 	}
-	
-
 
 	public void setUfoPosition() {
 		ActorUfo ufo = new ActorUfo();
-		addActor(ufo, new Location(150, 20));
-		doRun();
-		
+		addActor(ufo, new Location(150, 10));
 	}
-		
+
+	public void startUfo() {
+		doRun();
+	}
+
 	public void setLandscapePositions() {
 
 		ActorLandscape landscape = new ActorLandscape();
@@ -42,6 +42,5 @@ public class PlayPanel extends GameGrid {
 
 		ActorLandingSpace ActorLandingSpace3 = new ActorLandingSpace();
 		addActor(ActorLandingSpace3, new Location(290, 100));
-
 	}
 }

@@ -10,9 +10,8 @@ public class ActorUfo extends Actor {
 	}
 
 	public void act() {
+		setDirection(Location.SOUTH);
 		move(1);
 		setSlowDown(5);
-	    setDirection(Location.SOUTH);
 	}
-
 }

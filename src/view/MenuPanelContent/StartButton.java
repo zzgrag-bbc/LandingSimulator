@@ -4,11 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Timer;
 import java.util.TimerTask;
-
 import javax.swing.JButton;
-
 import Model.Zeit;
 import UtilityClasses.ImageLoader;
+import view.View;
 
 @SuppressWarnings("serial")
 public class StartButton extends JButton {
@@ -21,14 +20,15 @@ public class StartButton extends JButton {
 		setIcon(ImageLoader.loadIcon("Menupanel/ButtonIngameStart.png"));
 		addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+
 				startTimer();
-				}
+				
+				View.getplayPanel().startUfo();
 			}
-		);
+		});
 	}
-	
-	public void startTimer(){
+
+	public void startTimer() {
 		final Timer timer = new Timer();
 		final Zeit z = new Zeit();
 		z.setEin(0);
@@ -42,6 +42,6 @@ public class StartButton extends JButton {
 			}
 		};
 		timer.scheduleAtFixedRate(task, 0, 1000);
-		setEnabled(false);	
+		setEnabled(false);
 	}
 }

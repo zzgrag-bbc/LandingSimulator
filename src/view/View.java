@@ -14,6 +14,7 @@ public class View extends JWindow {
 
 	// Instance Variables
 	private StartScreenPanel startScreenPanel;
+	private static PlayPanel playPanel;
 
 	// Constructor
 	private View() {
@@ -30,7 +31,7 @@ public class View extends JWindow {
 		MenuPanel menuPanel = new MenuPanel();
 		add(menuPanel, BorderLayout.WEST);
 
-		PlayPanel playPanel = new PlayPanel();
+		playPanel = new PlayPanel();
 		add(playPanel, BorderLayout.CENTER);
 		pack();
 
@@ -45,5 +46,9 @@ public class View extends JWindow {
 				new View();
 			}
 		});
+	}
+
+	public static PlayPanel getplayPanel() {
+		return playPanel;
 	}
 }
