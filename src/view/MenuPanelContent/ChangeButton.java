@@ -1,5 +1,8 @@
 package view.MenuPanelContent;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 
 import UtilityClasses.ImageLoader;
@@ -13,6 +16,11 @@ public class ChangeButton extends JButton {
 		setContentAreaFilled(false);
 		setBorderPainted(false);
 		setIcon(ImageLoader.loadIcon("Menupanel/ButtonIngameChange.png"));
-		addActionListener(null);
+		addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
 	}
 }
