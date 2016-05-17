@@ -20,6 +20,7 @@ public class StartButton extends JButton {
 		setIcon(ImageLoader.loadIcon("Menupanel/ButtonIngameStart.png"));
 		addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				View.getPlayPanel().requestFocusInWindow();
 				startTimer();
 				View.getPlayPanel().startUfo();
 			}

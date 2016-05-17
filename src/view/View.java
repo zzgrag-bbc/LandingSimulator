@@ -23,7 +23,6 @@ public class View extends JFrame {
 		startScreenPanel = new StartScreenPanel(this);
 		add(startScreenPanel);
 		setVisible(true);
-//		setFocusable(true);
 	}
 
 	public void start() {
@@ -38,7 +37,6 @@ public class View extends JFrame {
 
 		playPanel.setLandscapePositions();
 		playPanel.setUfoPosition();
-		playPanel.setStartButtonPosition();
 	}
 
 	public static void main(String[] args) {

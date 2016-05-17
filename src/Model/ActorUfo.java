@@ -21,8 +21,8 @@ public class ActorUfo extends Actor implements GGKeyListener {
 	private int thrustLevel; // Thrust level
 	private double fuel; // Remaining fuel
 	private Actor ufoCrashed = new Actor("images/IngameScreen/ufo2.png"); // Crashed
-	private boolean isLanded = false; // Boolean for checking if UFO is already landed
-	private boolean fuelExpired; // Boolean for disabling controls if fuel is expired
+	private boolean isLanded = false; // Boolean for checking if UFO is already
+										// landed
 
 	public ActorUfo() {
 		super("images/IngameScreen/ufo.png");
@@ -31,7 +31,7 @@ public class ActorUfo extends Actor implements GGKeyListener {
 	// Reset Method always called before starting
 	public void reset() {
 
-//		GameGrid gg = gameGrid;
+		// GameGrid gg = gameGrid;
 		setDirection(Location.SOUTH);
 		x = getLocationStart().x;
 		y = getLocationStart().y;
@@ -40,13 +40,11 @@ public class ActorUfo extends Actor implements GGKeyListener {
 		accelerationX = 0;
 		accelerationY = amax;
 		fuel = startFuel;
-		fuelExpired = false;
-		
 		setActEnabled(true);
 
-//		if (ufoCrashed.gameGrid == null) // not yet added to GameGrid
-//			gg.addActor(ufoCrashed, new Location());
-//		ufoCrashed.hide();
+		// if (ufoCrashed.gameGrid == null) // not yet added to GameGrid
+		// gg.addActor(ufoCrashed, new Location());
+		// ufoCrashed.hide();
 
 		isLanded = false;
 
@@ -58,10 +56,16 @@ public class ActorUfo extends Actor implements GGKeyListener {
 		move(1);
 		setSlowDown(2);
 
-//		GameGrid gg = gameGrid;
+		// GameGrid gg = gameGrid;
 
-		double dtx = 2 * View.getPlayPanel().getSimulationPeriod() / 1000.0; // Time scaled: * 2
-		double dty = 2 * View.getPlayPanel().getSimulationPeriod() / 1000.0; // Time scaled: * 2
+		double dtx = 2 * View.getPlayPanel().getSimulationPeriod() / 1000.0; // Time
+																				// scaled:
+																				// *
+																				// 2
+		double dty = 2 * View.getPlayPanel().getSimulationPeriod() / 1000.0; // Time
+																				// scaled:
+																				// *
+																				// 2
 		velocityX = velocityX + accelerationX * dtx;
 		velocityY = velocityY + accelerationY * dty;
 		x = x + velocityX * dtx;
@@ -75,7 +79,6 @@ public class ActorUfo extends Actor implements GGKeyListener {
 			accelerationX = 0;
 			accelerationY = amax;
 			setThrust(0);
-			fuelExpired = true;
 		}
 
 		if (getLocation().y > 490 && !isLanded) {
