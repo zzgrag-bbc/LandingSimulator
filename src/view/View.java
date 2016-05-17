@@ -3,14 +3,14 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
-import javax.swing.JWindow;
+import javax.swing.JFrame;
 
 import view.MenuPanelContent.MenuPanel;
 import view.PlayPanelContent.PlayPanel;
 import view.Screens.StartScreenPanel;
 
 @SuppressWarnings("serial")
-public class View extends JWindow {
+public class View extends JFrame {
 
 	// Instance Variables
 	private StartScreenPanel startScreenPanel;
@@ -23,6 +23,7 @@ public class View extends JWindow {
 		startScreenPanel = new StartScreenPanel(this);
 		add(startScreenPanel);
 		setVisible(true);
+//		setFocusable(true);
 	}
 
 	public void start() {
@@ -37,6 +38,7 @@ public class View extends JWindow {
 
 		playPanel.setLandscapePositions();
 		playPanel.setUfoPosition();
+		playPanel.setStartButtonPosition();
 	}
 
 	public static void main(String[] args) {
@@ -48,7 +50,7 @@ public class View extends JWindow {
 		});
 	}
 
-	public static PlayPanel getplayPanel() {
+	public static PlayPanel getPlayPanel() {
 		return playPanel;
 	}
 }
