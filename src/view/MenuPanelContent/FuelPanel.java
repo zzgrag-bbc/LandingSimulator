@@ -13,6 +13,9 @@ import UtilityClasses.ImageLoader;
 
 @SuppressWarnings("serial")
 public class FuelPanel extends JPanel {
+	
+	// Fuel Bar
+	public static JProgressBar fuel = new JProgressBar(0, 10000);
 
 	// Blank Pictures for Fuel Bar
 	JLabel northFuel = new JLabel(ImageLoader.loadIcon("Menupanel/north_fuel.png"));
@@ -22,15 +25,12 @@ public class FuelPanel extends JPanel {
 
 	public FuelPanel() {
 
-		// Fuel Bar
-		JProgressBar fuel = new JProgressBar(0, 100);
-
 		// Design of Fuel Bar
 		Border border = new LineBorder(Color.DARK_GRAY, 2);
 		fuel.setForeground(Color.GREEN);
 		fuel.setBackground(Color.LIGHT_GRAY);
 		fuel.setBorder(border);
-		fuel.setValue(100);
+		fuel.setValue(10000);
 
 		// Adding Components to fuelPanel + Design
 		setLayout(new BorderLayout());
@@ -41,4 +41,10 @@ public class FuelPanel extends JPanel {
 		add(southFuel, BorderLayout.SOUTH);
 		add(westFuel, BorderLayout.WEST);
 	}
+
+	public static JProgressBar getFuel() {
+		return fuel;
+	}
+	
+	
 }

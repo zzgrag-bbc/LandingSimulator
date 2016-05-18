@@ -6,6 +6,7 @@ import ch.aplu.jgamegrid.Actor;
 import ch.aplu.jgamegrid.GGKeyListener;
 import ch.aplu.jgamegrid.Location;
 import view.View;
+import view.MenuPanelContent.FuelPanel;
 
 public class ActorUfo extends Actor implements GGKeyListener {
 
@@ -55,17 +56,13 @@ public class ActorUfo extends Actor implements GGKeyListener {
 		setDirection(Location.SOUTH);
 		move(1);
 		setSlowDown(2);
+		FuelPanel.getFuel().setValue((int) fuel);
 
 		// GameGrid gg = gameGrid;
 
-		double dtx = 2 * View.getPlayPanel().getSimulationPeriod() / 1000.0; // Time
-																				// scaled:
-																				// *
-																				// 2
-		double dty = 2 * View.getPlayPanel().getSimulationPeriod() / 1000.0; // Time
-																				// scaled:
-																				// *
-																				// 2
+		double dtx = 2 * View.getPlayPanel().getSimulationPeriod() / 1000.0; // Time scaled: * 2
+		double dty = 2 * View.getPlayPanel().getSimulationPeriod() / 1000.0; // Time scaled: * 2
+
 		velocityX = velocityX + accelerationX * dtx;
 		velocityY = velocityY + accelerationY * dty;
 		x = x + velocityX * dtx;
