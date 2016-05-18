@@ -53,6 +53,7 @@ public class ActorUfo extends Actor implements GGKeyListener {
 
 	public void act() {
 
+//		System.out.println("Timer");
 		setDirection(Location.SOUTH);
 		move(1);
 		setSlowDown(2);

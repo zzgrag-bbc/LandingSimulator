@@ -35,8 +35,9 @@ public class View extends JFrame {
 		add(playPanel, BorderLayout.CENTER);
 		pack();
 
-		playPanel.setLandscapePositions();
-		playPanel.setUfoPosition();
+		playPanel.prepareLandscape();
+		playPanel.prepareLandingSpace();
+		playPanel.prepareUfo();
 	}
 
 	public static void main(String[] args) {
