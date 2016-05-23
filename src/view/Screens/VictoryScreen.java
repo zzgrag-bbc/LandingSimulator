@@ -1,4 +1,4 @@
-package Model;
+package view.Screens;
 
 import ch.aplu.jgamegrid.Actor;
 import ch.aplu.jgamegrid.GGActorCollisionListener;

@@ -10,10 +10,10 @@ import Model.ActorLandscape3;
 import Model.ActorLandscape4;
 import Model.ActorLandscape5;
 import Model.ActorUfo;
-import Model.GameOverScreen;
-import Model.VictoryScreen;
 import ch.aplu.jgamegrid.GameGrid;
 import ch.aplu.jgamegrid.Location;
+import view.Screens.GameOverScreen;
+import view.Screens.VictoryScreen;
 
 @SuppressWarnings("serial")
 public class PlayPanel extends GameGrid {
