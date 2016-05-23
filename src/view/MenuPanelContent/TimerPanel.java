@@ -15,13 +15,13 @@ import UtilityClasses.ImageLoader;
 @SuppressWarnings("serial")
 public class TimerPanel extends JPanel {
 
-	public static JTextArea timer = new JTextArea(" 00:00:00");
+	private JTextArea timer = new JTextArea(" 00:00:00");
 
 	// Blank Pictures for Timer
-	JLabel northTimer = new JLabel(ImageLoader.loadIcon("Menupanel/north_timer.png"));
-	JLabel eastTimer = new JLabel(ImageLoader.loadIcon("Menupanel/west_east.png"));
-	JLabel southTimer = new JLabel(ImageLoader.loadIcon("Menupanel/south.png"));
-	JLabel westTimer = new JLabel(ImageLoader.loadIcon("Menupanel/west_east.png"));
+	private JLabel northTimer = new JLabel(ImageLoader.loadIcon("Menupanel/north_timer.png"));
+	private JLabel eastTimer = new JLabel(ImageLoader.loadIcon("Menupanel/west_east.png"));
+	private JLabel southTimer = new JLabel(ImageLoader.loadIcon("Menupanel/south.png"));
+	private JLabel westTimer = new JLabel(ImageLoader.loadIcon("Menupanel/west_east.png"));
 
 	public TimerPanel() {
 
@@ -39,7 +39,11 @@ public class TimerPanel extends JPanel {
 		add(timer, BorderLayout.CENTER);
 		add(southTimer, BorderLayout.SOUTH);
 		add(westTimer, BorderLayout.WEST);
-
+	}
+	
+	public void setTimerText(String formattedTimerText)
+	{
+		timer.setText(formattedTimerText);
 	}
 
 }

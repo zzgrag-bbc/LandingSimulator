@@ -2,10 +2,9 @@ package view.MenuPanelContent;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Timer;
-import java.util.TimerTask;
+
 import javax.swing.JButton;
-import Model.Zeit;
+import Model.GameTimer;
 import UtilityClasses.ImageLoader;
 import view.View;
 
@@ -20,6 +19,7 @@ public class StartButton extends JButton {
 		setIcon(ImageLoader.loadIcon("Menupanel/ButtonIngameStart.png"));
 		addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				View.getPlayPanel().getUfo().reset();
 				View.getPlayPanel().requestFocusInWindow();
 				startTimer();
 				View.getPlayPanel().startUfo();
@@ -28,19 +28,7 @@ public class StartButton extends JButton {
 	}
 
 	public void startTimer() {
-		final Timer timer = new Timer();
-		final Zeit z = new Zeit();
-		z.setEin(0);
-		final TimerTask task = new TimerTask() {
-			public void run() {
-				if (Zeit.getAus() == 1) {
-					timer.cancel();
-				} else {
-					z.macheZeit();
-				}
-			}
-		};
-		timer.scheduleAtFixedRate(task, 0, 1000);
+		GameTimer.getInstance().start();
 		setEnabled(false);
 	}
 }
