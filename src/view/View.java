@@ -7,7 +7,9 @@ import javax.swing.JFrame;
 
 import view.MenuPanelContent.MenuPanel;
 import view.PlayPanelContent.PlayPanel;
+import view.Screens.GameOverScreen;
 import view.Screens.StartScreenPanel;
+import view.Screens.VictoryScreen;
 
 @SuppressWarnings("serial")
 public class View extends JFrame {
@@ -31,13 +33,25 @@ public class View extends JFrame {
 		MenuPanel menuPanel = new MenuPanel();
 		add(menuPanel, BorderLayout.WEST);
 
-		playPanel = new PlayPanel();
+		playPanel = new PlayPanel(this);
 		add(playPanel, BorderLayout.CENTER);
 		pack();
 
 		playPanel.prepareLandscape();
 		playPanel.prepareLandingSpace();
 		playPanel.prepareUfo();
+	}
+	
+	public void showGameOverScreen() {
+		GameOverScreen gameOverScreenPanel = playPanel.getGameOverScreen();
+		remove(playPanel);
+		add(gameOverScreenPanel);
+	}
+	
+	public void showVictoryScreen() {
+		VictoryScreen victoryScreen = playPanel.getVictoryScreen();
+		remove(playPanel);
+		add(victoryScreen);
 	}
 
 	public static void main(String[] args) {

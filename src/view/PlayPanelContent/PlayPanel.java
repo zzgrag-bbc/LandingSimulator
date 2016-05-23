@@ -1,6 +1,5 @@
 package view.PlayPanelContent;
 
-import java.awt.Color;
 import java.awt.Point;
 
 import Model.ActorLandingSpace;
@@ -12,6 +11,7 @@ import Model.ActorLandscape5;
 import Model.ActorUfo;
 import ch.aplu.jgamegrid.GameGrid;
 import ch.aplu.jgamegrid.Location;
+import view.View;
 import view.Screens.GameOverScreen;
 import view.Screens.VictoryScreen;
 
@@ -27,19 +27,21 @@ public class PlayPanel extends GameGrid {
 	public ActorLandingSpace ActorLandingSpace1 = new ActorLandingSpace();
 	public ActorLandingSpace ActorLandingSpace2 = new ActorLandingSpace();
 	public ActorLandingSpace ActorLandingSpace3 = new ActorLandingSpace();
-	public GameOverScreen gameOverScreen = new GameOverScreen();
-	public VictoryScreen victoryScreen = new VictoryScreen();
+	public GameOverScreen gameOverScreen;
+	public VictoryScreen victoryScreen;
 
 	private int resolutionX = 1580;
 	private int resolutionY = 1040;
 	private int cellSize = 5;
 	private int simulationPeriod = 10;
 
-	public PlayPanel() {
+	public PlayPanel(View view) {
+		gameOverScreen = new GameOverScreen(view, this);
+		victoryScreen = new VictoryScreen(view, this);
 		setNbVertCells(resolutionY / cellSize);
 		setNbHorzCells(resolutionX / cellSize);
 		setCellSize(cellSize);
-		setGridColor(Color.RED);
+//		setGridColor(Color.RED);
 		setBgImagePath("images/IngameScreen/background.jpg");
 		setSimulationPeriod(simulationPeriod);
 	}
@@ -98,5 +100,17 @@ public class PlayPanel extends GameGrid {
 		ActorLandingSpace3.setCollisionImage(0);
 		ActorLandingSpace3.addCollisionActor(ufo);
 		ActorLandingSpace3.addActorCollisionListener(victoryScreen);
+	}
+
+	public GameOverScreen getGameOverScreen() {
+		return gameOverScreen;
+	}
+
+	public VictoryScreen getVictoryScreen() {
+		return victoryScreen;
+	}
+
+	public ActorUfo getUfo() {
+		return ufo;
 	}
 }
