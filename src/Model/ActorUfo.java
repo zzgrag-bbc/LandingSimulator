@@ -5,10 +5,11 @@ import java.awt.event.KeyEvent;
 import ch.aplu.jgamegrid.Actor;
 import ch.aplu.jgamegrid.GGKeyListener;
 import ch.aplu.jgamegrid.Location;
+import ch.aplu.xboxcontroller.XboxController;
 import view.View;
 import view.MenuPanelContent.FuelPanel;
 
-public class ActorUfo extends Actor implements GGKeyListener {
+public class ActorUfo extends Actor implements GGKeyListener{
 
 	private final double startFuel = 700; // Amount of fuel at start
 	private final double fuelFactor = 0.5; // Fuel consumption per simulation
@@ -22,17 +23,17 @@ public class ActorUfo extends Actor implements GGKeyListener {
 	private int thrustLevel; // Thrust level
 	private double fuel; // Remaining fuel
 	private Actor ufoCrashed = new Actor("images/IngameScreen/ufo2.png"); // Crashed
-	private boolean isLanded = false; // Boolean for checking if UFO is already
-										// landed
-
+	private boolean isLanded = false; // Boolean for checking if UFO is already landed
+	private ControllerAdapter controllerAdapter;
+	
 	public ActorUfo() {
 		super("images/IngameScreen/ufo.png");
+		controllerAdapter = new ControllerAdapter(this);
 	}
 
 	// Reset Method always called before starting
 	public void reset() {
 
-		// GameGrid gg = gameGrid;
 		setDirection(Location.SOUTH);
 		x = getLocationStart().x;
 		y = getLocationStart().y;
@@ -43,23 +44,15 @@ public class ActorUfo extends Actor implements GGKeyListener {
 		fuel = startFuel;
 		setActEnabled(true);
 
-		// if (ufoCrashed.gameGrid == null) // not yet added to GameGrid
-		// gg.addActor(ufoCrashed, new Location());
-		// ufoCrashed.hide();
-
 		isLanded = false;
-
 	}
 
 	public void act() {
 
-//		System.out.println("Timer");
 		setDirection(Location.SOUTH);
 		move(1);
 		setSlowDown(2);
 		FuelPanel.getFuel().setValue((int) fuel);
-
-		// GameGrid gg = gameGrid;
 
 		double dtx = 2 * View.getPlayPanel().getSimulationPeriod() / 1000.0; // Time scaled: * 2
 		double dty = 2 * View.getPlayPanel().getSimulationPeriod() / 1000.0; // Time scaled: * 2
@@ -159,5 +152,33 @@ public class ActorUfo extends Actor implements GGKeyListener {
 		if (i > 8) {
 			i = 8;
 		}
+	}
+
+	public void setAccelerationY(double accelerationY) {
+		this.accelerationY = accelerationY;
+	}
+
+	public void setAccelerationX(double accelerationX) {
+		this.accelerationX = accelerationX;
+	}
+
+	public double getAmax() {
+		return amax;
+	}
+
+	public double getAccelerationX() {
+		return accelerationX;
+	}
+
+	public double getAccelerationY() {
+		return accelerationY;
+	}
+
+	public int getThrustLevel() {
+		return thrustLevel;
+	}
+
+	public void setThrustLevel(int thrustLevel) {
+		this.thrustLevel = thrustLevel;
 	}
 }
