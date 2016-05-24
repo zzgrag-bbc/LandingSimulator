@@ -4,6 +4,7 @@ import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
+import Model.ActorLandingSpace;
 import Model.GameTimer;
 import UtilityClasses.ImageLoader;
 import ch.aplu.jgamegrid.Actor;
@@ -24,9 +25,22 @@ public class VictoryScreen extends JPanel implements GGActorCollisionListener {
 	}
 
 	@Override
-	public int collide(Actor arg0, Actor arg1) {
+	public int collide(Actor actor1, Actor actor2) {
+		
+		ActorLandingSpace landingSpace = null;
+		
+		if ( actor1 instanceof ActorLandingSpace )
+		{
+			landingSpace = (ActorLandingSpace) actor1;
+		}
+		if ( actor2 instanceof ActorLandingSpace )
+		{
+			landingSpace = (ActorLandingSpace) actor1;
+		}
+				
 		view.showVictoryScreen();
 		playPanel.doPause();
+		System.out.println(landingSpace.getDifficulty());
 
 		GameTimer.getInstance().stopTimer();
 

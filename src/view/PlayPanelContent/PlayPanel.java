@@ -87,16 +87,19 @@ public class PlayPanel extends GameGrid {
 	public void prepareLandingSpace() {
 
 		addActor(ActorLandingSpace1, new Location(55, 205));
+		ActorLandingSpace1.setDifficulty(500);
 		ActorLandingSpace1.setCollisionImage(0);
 		ActorLandingSpace1.addCollisionActor(ufo);
 		ActorLandingSpace1.addActorCollisionListener(victoryScreen);
 
 		addActor(ActorLandingSpace2, new Location(183, 190));
+		ActorLandingSpace2.setDifficulty(100);
 		ActorLandingSpace2.setCollisionImage(0);
 		ActorLandingSpace2.addCollisionActor(ufo);
 		ActorLandingSpace2.addActorCollisionListener(victoryScreen);
 
 		addActor(ActorLandingSpace3, new Location(290, 100));
+		ActorLandingSpace3.setDifficulty(200);
 		ActorLandingSpace3.setCollisionImage(0);
 		ActorLandingSpace3.addCollisionActor(ufo);
 		ActorLandingSpace3.addActorCollisionListener(victoryScreen);
