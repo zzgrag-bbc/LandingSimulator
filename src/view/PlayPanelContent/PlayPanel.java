@@ -41,7 +41,7 @@ public class PlayPanel extends GameGrid {
 		setNbVertCells(resolutionY / cellSize);
 		setNbHorzCells(resolutionX / cellSize);
 		setCellSize(cellSize);
-//		setGridColor(Color.RED);
+		// setGridColor(Color.RED);
 		setBgImagePath("images/IngameScreen/background.jpg");
 		setSimulationPeriod(simulationPeriod);
 	}
@@ -57,7 +57,7 @@ public class PlayPanel extends GameGrid {
 	}
 
 	public void prepareLandscape() {
-		
+
 		addActor(ActorLandscape1, new Location(25, 150));
 		ActorLandscape1.setCollisionImage(0);
 		ActorLandscape1.addCollisionActor(ufo);

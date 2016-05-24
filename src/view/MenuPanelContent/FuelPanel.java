@@ -15,7 +15,7 @@ import UtilityClasses.ImageLoader;
 public class FuelPanel extends JPanel {
 	
 	// Fuel Bar
-	public static JProgressBar fuel = new JProgressBar(0, 10000);
+	public static JProgressBar fuel = new JProgressBar(0, 700);
 
 	// Blank Pictures for Fuel Bar
 	JLabel northFuel = new JLabel(ImageLoader.loadIcon("Menupanel/north_fuel.png"));

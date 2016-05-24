@@ -41,13 +41,13 @@ public class View extends JFrame {
 		playPanel.prepareLandingSpace();
 		playPanel.prepareUfo();
 	}
-	
+
 	public void showGameOverScreen() {
 		GameOverScreen gameOverScreenPanel = playPanel.getGameOverScreen();
 		remove(playPanel);
 		add(gameOverScreenPanel);
 	}
-	
+
 	public void showVictoryScreen() {
 		VictoryScreen victoryScreen = playPanel.getVictoryScreen();
 		remove(playPanel);

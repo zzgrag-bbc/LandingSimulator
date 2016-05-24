@@ -10,7 +10,7 @@ import view.MenuPanelContent.FuelPanel;
 
 public class ActorUfo extends Actor implements GGKeyListener {
 
-	private final double startFuel = 10000; // Amount of fuel at start
+	private final double startFuel = 700; // Amount of fuel at start
 	private final double fuelFactor = 0.5; // Fuel consumption per simulation
 	private final double amax = 1.6; // Free acceleration on moon
 	private double x; // Position in left direction
