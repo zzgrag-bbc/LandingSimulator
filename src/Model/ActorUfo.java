@@ -20,12 +20,12 @@ public class ActorUfo extends Actor implements GGKeyListener {
 	private double accelerationY; // Acceleration in vertical direction
 	private int thrustLevel; // Thrust level
 	private double fuel; // Remaining fuel
-	private Actor ufoCrashed = new Actor("images/IngameScreen/ufo2.png"); // Crashed
 	private boolean isLanded = false; // Boolean for checking if UFO is already landed
 	private double simulationPeriod;
 
 	public ActorUfo(double simulationPeriod) {
-		super("images/IngameScreen/ufo.png");
+		super(false, "images/IngameScreen/ufo.png", 2);
+		
 		this.simulationPeriod = simulationPeriod;
 		new ControllerAdapter(this);
 	}
@@ -71,18 +71,18 @@ public class ActorUfo extends Actor implements GGKeyListener {
 			setThrust(0);
 		}
 
-		if (getLocation().y > 490 && !isLanded) {
-
-			if (velocityY > 10.0) {
-				ufoCrashed.setLocation(new Location(getLocation().x, getLocation().y + 30));
-				ufoCrashed.show();
-				hide();
-			}
-			setActEnabled(false);
-			thrustLevel = 0;
-			setThrust(0);
-			isLanded = true;
-		}
+//		if (getLocation().y > 490 && !isLanded) {
+//
+//			if (velocityY > 10.0) {
+//				ufoCrashed.setLocation(new Location(getLocation().x, getLocation().y + 30));
+//				ufoCrashed.show();
+//				hide();
+//			}
+//			setActEnabled(false);
+//			thrustLevel = 0;
+//			setThrust(0);
+//			isLanded = true;
+//		}
 	}
 
 	public boolean keyPressed(KeyEvent evt) {

@@ -2,10 +2,14 @@ package view.MenuPanelContent;
 
 import java.awt.GridLayout;
 import java.awt.Image;
+import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import Model.ActorUfo;
 import Model.GameTimer;
 import UtilityClasses.ImageLoader;
 import UtilityClasses.ImagePanel;
@@ -41,6 +45,16 @@ public class MenuPanel extends ImagePanel {
 		add(fuelPanel);
 		add(this.scorePanel);
 		add(timerPanel);
+		
+		changeButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				playPanel.getUfo().showNextSprite();
+				playPanel.repaint();
+				// playPanel.getUfo().setCollisionCircle(new Point(1, 1),  42);
+				playPanel.requestFocusInWindow();
+			}
+		});
 	}
 
 	public JButton getStartButton() {
