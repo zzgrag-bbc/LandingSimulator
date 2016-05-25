@@ -30,7 +30,7 @@ public class FuelPanel extends JPanel {
 		fuel.setForeground(Color.GREEN);
 		fuel.setBackground(Color.LIGHT_GRAY);
 		fuel.setBorder(border);
-		fuel.setValue(10000);
+		fuel.setValue(700);
 
 		// Adding Components to fuelPanel + Design
 		setLayout(new BorderLayout());

@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import Model.GameTimer;
 import UtilityClasses.ImageLoader;
 import UtilityClasses.ImagePanel;
+import view.PlayPanelContent.PlayPanel;
 
 @SuppressWarnings("serial")
 public class MenuPanel extends ImagePanel {
@@ -20,16 +21,17 @@ public class MenuPanel extends ImagePanel {
 	private JButton changeButton = new ChangeButton();
 	private JButton quitButton = new QuitButton();
 	private JPanel fuelPanel = new FuelPanel();
-	private JPanel scorePanel = new ScorePanel();
+	private JPanel scorePanel;
 	private TimerPanel timerPanel;
 
-	public MenuPanel() {
+	public MenuPanel(PlayPanel playPanel, ScorePanel scorePanel) {
 
 		super(BACKGROUND);
 		
 		timerPanel = new TimerPanel();
 		GameTimer.getInstance().setTimerPanel(timerPanel);
-		startButton = new StartButton();
+		startButton = new StartButton(playPanel);
+		this.scorePanel = scorePanel;
 
 		// Adding Components to Layout
 		setLayout(new GridLayout(8, 1));
@@ -37,7 +39,7 @@ public class MenuPanel extends ImagePanel {
 		add(changeButton);
 		add(quitButton);
 		add(fuelPanel);
-		add(scorePanel);
+		add(this.scorePanel);
 		add(timerPanel);
 	}
 

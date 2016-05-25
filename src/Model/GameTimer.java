@@ -23,13 +23,11 @@ public class GameTimer {
 		return instance;
 	}
 	
-	private GameTimer() {}
+	public GameTimer() {}
 	
-	private String sekunden = "00";
+
 	private int sekundenZähler = 0;
-	private String minuten = "00";
 	private int minutenZähler = 0;
-	private String stunden = "00";
 	private int stundenZähler = 0;
 	private TimerTask task;
 	private TimerPanel timerPanel;
@@ -56,8 +54,17 @@ public class GameTimer {
 		task.cancel();
 	}
 
+	public int getPassedTimeInSeconds()
+	{
+		return sekundenZähler + (minutenZähler * 60) + (stundenZähler * 60 * 60);
+	}
+	
 	private void upateAndGetFormatedTime() {
 
+		String sekunden = "00";
+		String stunden = "00";
+		String minuten = "00";
+		
 		sekundenZähler++;
 		if (sekundenZähler <= 59) {
 			DecimalFormat df = new DecimalFormat("00");
