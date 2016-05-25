@@ -9,6 +9,7 @@ import Model.ActorLandscape3;
 import Model.ActorLandscape4;
 import Model.ActorLandscape5;
 import Model.ActorUfo;
+import ch.aplu.jgamegrid.GGSound;
 import ch.aplu.jgamegrid.GameGrid;
 import ch.aplu.jgamegrid.Location;
 
@@ -32,10 +33,13 @@ public class PlayPanel extends GameGrid {
 	private int cellSize = 5;
 	private int simulationPeriod = 10;
 	private ActorUfo ufo = new ActorUfo(simulationPeriod);
-	
+
 	public PlayPanel(Listener.GameOverCollisionListener gameOverCollisionListener,
 			Listener.VictoryCollisionListener victoryCollisionListener) {
-		
+
+		playSound(GGSound.DUMMY);
+		playSound(GGSound.SOUND);
+
 		this.gameOverCollisionListener = gameOverCollisionListener;
 		this.victoryCollisionListener = victoryCollisionListener;
 
@@ -80,7 +84,7 @@ public class PlayPanel extends GameGrid {
 		ActorLandscape5.addCollisionActor(ufo);
 		ActorLandscape5.addActorCollisionListener(gameOverCollisionListener);
 	}
-	
+
 	public void prepareLandingSpace() {
 
 		addActor(ActorLandingSpace1, new Location(55, 205));

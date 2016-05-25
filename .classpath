@@ -2,12 +2,8 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="lib/JGameGrid.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/LandingSimulator/lib/jgamegrid-2.46-javadoc.jar!/"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="lib/jaw.jar"/>
 	<classpathentry kind="lib" path="lib/XboxController.jar"/>
+	<classpathentry kind="lib" path="lib/JGameGrid.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
