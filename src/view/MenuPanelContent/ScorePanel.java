@@ -45,7 +45,7 @@ public class ScorePanel extends JPanel {
 	
 	public void updateScore(int score)
 	{
-		textArea = new JTextArea(String.valueOf(score));
+		textArea.setText(" " + String.valueOf(score));
+		textArea.repaint();
 	}
-
 }

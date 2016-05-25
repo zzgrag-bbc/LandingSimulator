@@ -2,6 +2,7 @@ import java.awt.EventQueue;
 
 import Listener.GameOverCollisionListener;
 import Listener.VictoryCollisionListener;
+import Model.ScoreCalculator;
 import view.MainFrame;
 import view.MenuPanelContent.ScorePanel;
 import view.PlayPanelContent.PlayPanel;
@@ -17,16 +18,18 @@ public class Game {
 	private VictoryCollisionListener victoryCollisionListener;
 	private MainFrame mainFrame;
 	private ScorePanel scorePanel = new ScorePanel();
+	private ScoreCalculator scoreCalculator;
 	
 	public Game()
 	{
+		scoreCalculator = new ScoreCalculator(scorePanel);
 		gameOverCollisionListener = new GameOverCollisionListener();
 		victoryCollisionListener = new VictoryCollisionListener();
 		playPanel = new PlayPanel(gameOverCollisionListener, victoryCollisionListener);
 		mainFrame = new MainFrame(playPanel, gameOverScreen, victoryScreen, scorePanel);
 		
 		gameOverCollisionListener.setPlayPanelAndMainFrame(playPanel, mainFrame);
-		victoryCollisionListener.setPlayPanelAndMainFrame(playPanel, mainFrame, scorePanel );
+		victoryCollisionListener.setPlayPanelAndMainFrame(playPanel, mainFrame, scoreCalculator );
 	}
 	
 	public static void main(String[] args) {

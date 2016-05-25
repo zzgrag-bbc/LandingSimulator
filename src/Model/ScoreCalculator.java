@@ -1,38 +1,21 @@
 package Model;
 
-import Listener.VictoryCollisionListener;
+import view.MenuPanelContent.ScorePanel;
 
 public class ScoreCalculator {
 
-	private int difficulty;
-	private int remainingFuel;
-	private int usedTime;
-	private int score;
+	private ScorePanel scorePanel;
 
-	private ActorUfo actorUfo;
-	private GameTimer gameTimer = new GameTimer();
-	private VictoryCollisionListener victoryCollisionListener;
-
-	public ScoreCalculator() {
-		setVariables();
+	public ScoreCalculator(ScorePanel scorePanel) {
+		this.scorePanel = scorePanel;
 	}
 
-	private void setVariables() {
-		difficulty = victoryCollisionListener.getDifficultyScore();
-		remainingFuel = actorUfo.getFuel();
-		usedTime = gameTimer.getPassedTimeInSeconds();
+	public void updateScore(int difficultyScore, int remainingFuel) {
+		scorePanel.updateScore(calculateScore(difficultyScore, remainingFuel));
 	}
-
-	public void calculateScore() {
-		setScore(difficulty + remainingFuel - usedTime);
+	
+	private int calculateScore(int difficulty, int remainingFuel) {
+		int usedTime = GameTimer.getInstance().getPassedTimeInSeconds();
+		return difficulty + remainingFuel - usedTime * 10;
 	}
-
-	public int getScore() {
-		return score;
-	}
-
-	private void setScore(int score) {
-		this.score = score;
-	}
-
 }

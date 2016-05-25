@@ -1,12 +1,12 @@
 package Listener;
 
 import Model.ActorLandingSpace;
+import Model.ActorUfo;
 import Model.GameTimer;
 import Model.ScoreCalculator;
 import ch.aplu.jgamegrid.Actor;
 import ch.aplu.jgamegrid.GGActorCollisionListener;
 import view.MainFrame;
-import view.MenuPanelContent.ScorePanel;
 import view.PlayPanelContent.PlayPanel;
 
 public class VictoryCollisionListener implements GGActorCollisionListener {
@@ -14,36 +14,33 @@ public class VictoryCollisionListener implements GGActorCollisionListener {
 	private MainFrame mainFrame;
 	private PlayPanel playPanel;
 	private ScoreCalculator scoreCalculator;
-	private ScorePanel scorePanel;
-
+	
 	@Override
 	public int collide(Actor actor1, Actor actor2) {
 
 		ActorLandingSpace landingSpace = null;
-
+		ActorUfo ufo = null;
+		
 		if (actor1 instanceof ActorLandingSpace) {
 			landingSpace = (ActorLandingSpace) actor1;
-		}
-		if (actor2 instanceof ActorLandingSpace) {
-			landingSpace = (ActorLandingSpace) actor1;
+			ufo = (ActorUfo) actor2;
+		} else{
+			landingSpace = (ActorLandingSpace) actor2;
+			ufo = (ActorUfo) actor1;
 		}
 
 		mainFrame.showVictoryScreen();
 		playPanel.doPause();
 		GameTimer.getInstance().stopTimer();
 		difficultyScore = landingSpace.getDifficulty();
-		scoreCalculator = new ScoreCalculator();
-		scorePanel.updateScore(scoreCalculator.getScore());
+		scoreCalculator.updateScore(difficultyScore, ufo.getFuel());
+
 		return 0;
 	}
 
-	public int getDifficultyScore() {
-		return difficultyScore;
-	}
-
-	public void setPlayPanelAndMainFrame(PlayPanel playPanel, MainFrame mainFrame, ScorePanel scorePanel) {
+	public void setPlayPanelAndMainFrame(PlayPanel playPanel, MainFrame mainFrame, ScoreCalculator scoreCalculator) {
 		this.playPanel = playPanel;
 		this.mainFrame = mainFrame;
-		this.scorePanel = scorePanel;
+		this.scoreCalculator = scoreCalculator;
 	}
 }
