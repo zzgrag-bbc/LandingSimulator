@@ -1,2 +1,9 @@
 /view/
 /Model/
+/Main.class
+/Main$1.class
+/Game$1.class
+/Game.class
+/Game$GameOverCollisionListener.class
+/Game$VictoryCollisionListener.class
+/Listener/

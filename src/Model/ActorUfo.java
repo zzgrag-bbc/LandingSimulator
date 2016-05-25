@@ -1,11 +1,10 @@
-package Model;
+  package Model;
 
 import java.awt.event.KeyEvent;
 
 import ch.aplu.jgamegrid.Actor;
 import ch.aplu.jgamegrid.GGKeyListener;
 import ch.aplu.jgamegrid.Location;
-import view.View;
 import view.MenuPanelContent.FuelPanel;
 
 public class ActorUfo extends Actor implements GGKeyListener {
@@ -23,10 +22,11 @@ public class ActorUfo extends Actor implements GGKeyListener {
 	private double fuel; // Remaining fuel
 	private Actor ufoCrashed = new Actor("images/IngameScreen/ufo2.png"); // Crashed
 	private boolean isLanded = false; // Boolean for checking if UFO is already
+	private double simulationPeriod;
 										// landed
-
-	public ActorUfo() {
+	public ActorUfo(double simulationPeriod) {
 		super("images/IngameScreen/ufo.png");
+		this.simulationPeriod = simulationPeriod;
 	}
 
 	// Reset Method always called before starting
@@ -61,9 +61,13 @@ public class ActorUfo extends Actor implements GGKeyListener {
 
 		// GameGrid gg = gameGrid;
 
-		double dtx = 2 * View.getPlayPanel().getSimulationPeriod() / 1000.0; // Time scaled: * 2
-		double dty = 2 * View.getPlayPanel().getSimulationPeriod() / 1000.0; // Time scaled: * 2
+// TODO check if it work 
+//		double dtx = 2 * MainFrame.getPlayPanel().getSimulationPeriod() / 1000.0; // Time scaled: * 2
+//		double dty = 2 * MainFrame.getPlayPanel().getSimulationPeriod() / 1000.0; // Time scaled: * 2
 
+		double dtx = 2 * simulationPeriod / 1000.0; // Time scaled: * 2
+		double dty = 2 * simulationPeriod / 1000.0; // Time scaled: * 2
+		
 		velocityX = velocityX + accelerationX * dtx;
 		velocityY = velocityY + accelerationY * dty;
 		x = x + velocityX * dtx;
@@ -159,5 +163,9 @@ public class ActorUfo extends Actor implements GGKeyListener {
 		if (i > 8) {
 			i = 8;
 		}
+	}
+
+	public int getFuel() {
+		return (int) fuel;
 	}
 }

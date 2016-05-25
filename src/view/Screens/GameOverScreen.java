@@ -4,34 +4,13 @@ import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
-import Model.GameTimer;
 import UtilityClasses.ImageLoader;
-import ch.aplu.jgamegrid.Actor;
-import ch.aplu.jgamegrid.GGActorCollisionListener;
-import view.View;
-import view.PlayPanelContent.PlayPanel;
 
 @SuppressWarnings("serial")
-public class GameOverScreen extends JPanel implements GGActorCollisionListener {
+public class GameOverScreen extends JPanel {
 	
-	private View view;
-	private PlayPanel playPanel;
-
-	public GameOverScreen(View view, PlayPanel playPanel) {
+	public GameOverScreen() {
 		repaint();
-		this.view = view;
-		this.playPanel = playPanel;
-	}
-
-	
-	@Override
-	public int collide(Actor arg0, Actor arg1) {
-		view.showGameOverScreen();
-		playPanel.doPause();
-		
-		GameTimer.getInstance().stopTimer();
-		
-		return 0;
 	}
 
 	@Override
