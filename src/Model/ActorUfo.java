@@ -5,11 +5,9 @@ import java.awt.event.KeyEvent;
 import ch.aplu.jgamegrid.Actor;
 import ch.aplu.jgamegrid.GGKeyListener;
 import ch.aplu.jgamegrid.Location;
-import ch.aplu.xboxcontroller.XboxController;
-import view.View;
 import view.MenuPanelContent.FuelPanel;
 
-public class ActorUfo extends Actor implements GGKeyListener{
+public class ActorUfo extends Actor implements GGKeyListener {
 
 	private final double startFuel = 700; // Amount of fuel at start
 	private final double fuelFactor = 0.5; // Fuel consumption per simulation
@@ -24,11 +22,12 @@ public class ActorUfo extends Actor implements GGKeyListener{
 	private double fuel; // Remaining fuel
 	private Actor ufoCrashed = new Actor("images/IngameScreen/ufo2.png"); // Crashed
 	private boolean isLanded = false; // Boolean for checking if UFO is already landed
-	private ControllerAdapter controllerAdapter;
-	
-	public ActorUfo() {
+	private double simulationPeriod;
+
+	public ActorUfo(double simulationPeriod) {
 		super("images/IngameScreen/ufo.png");
-		controllerAdapter = new ControllerAdapter(this);
+		this.simulationPeriod = simulationPeriod;
+		new ControllerAdapter(this);
 	}
 
 	// Reset Method always called before starting
@@ -54,8 +53,8 @@ public class ActorUfo extends Actor implements GGKeyListener{
 		setSlowDown(2);
 		FuelPanel.getFuel().setValue((int) fuel);
 
-		double dtx = 2 * View.getPlayPanel().getSimulationPeriod() / 1000.0; // Time scaled: * 2
-		double dty = 2 * View.getPlayPanel().getSimulationPeriod() / 1000.0; // Time scaled: * 2
+		double dtx = 2 * simulationPeriod / 1000.0; // Time scaled: * 2
+		double dty = 2 * simulationPeriod / 1000.0; // Time scaled: * 2
 
 		velocityX = velocityX + accelerationX * dtx;
 		velocityY = velocityY + accelerationY * dty;
@@ -180,5 +179,9 @@ public class ActorUfo extends Actor implements GGKeyListener{
 
 	public void setThrustLevel(int thrustLevel) {
 		this.thrustLevel = thrustLevel;
+	}
+	
+	public int getFuel() {
+		 return (int) fuel;
 	}
 }

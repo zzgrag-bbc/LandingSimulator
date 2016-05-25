@@ -23,10 +23,10 @@ public class ScorePanel extends JPanel {
 	private JTextArea textArea;
 
 	public ScorePanel() {
-		
+
 		// TextArea to display Score
 		textArea = new JTextArea(" 0000");
-		
+
 		// Border & Font
 		Border border = new LineBorder(Color.DARK_GRAY, 2);
 		Font font = new Font("Arial", Font.BOLD, 22);
@@ -42,10 +42,10 @@ public class ScorePanel extends JPanel {
 		add(southScore, BorderLayout.SOUTH);
 		add(westScore, BorderLayout.WEST);
 	}
-	
-	public void updateScore(int score)
-	{
+
+	public void updateScore(int score) {
 		textArea.setText(" " + String.valueOf(score));
 		textArea.repaint();
 	}
+
 }

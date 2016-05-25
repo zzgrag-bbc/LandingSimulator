@@ -23,7 +23,8 @@ public class MainFrame extends JFrame {
 	private VictoryScreen victoryScreen;
 	private ScorePanel scorePanel;
 
-	public MainFrame(PlayPanel playPanel, GameOverScreen gameOverScreen, VictoryScreen victoryScreen, ScorePanel scorePanel) {
+	public MainFrame(PlayPanel playPanel, GameOverScreen gameOverScreen, VictoryScreen victoryScreen,
+			ScorePanel scorePanel) {
 		this.playPanel = playPanel;
 		this.gameOverScreen = gameOverScreen;
 		this.victoryScreen = victoryScreen;
@@ -54,12 +55,11 @@ public class MainFrame extends JFrame {
 		playPanel.prepareLandingSpace();
 		playPanel.prepareUfo();
 	}
-	
+
 	public void restart(JPanel endScreen) {
-		if (endScreen == gameOverScreen){
+		if (endScreen == gameOverScreen) {
 			remove(gameOverScreen);
-		}
-		else if (endScreen == victoryScreen){
+		} else if (endScreen == victoryScreen) {
 			remove(victoryScreen);
 		}
 		add(playPanel, BorderLayout.CENTER);
@@ -70,7 +70,7 @@ public class MainFrame extends JFrame {
 		add(gameOverScreen);
 	}
 
-	public void showVictoryScreen() {
+public void showVictoryScreen() {
 		remove(playPanel);
 		add(victoryScreen);
 	}

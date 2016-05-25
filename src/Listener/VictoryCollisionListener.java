@@ -14,17 +14,18 @@ public class VictoryCollisionListener implements GGActorCollisionListener {
 	private MainFrame mainFrame;
 	private PlayPanel playPanel;
 	private ScoreCalculator scoreCalculator;
-	
+
 	@Override
 	public int collide(Actor actor1, Actor actor2) {
 
 		ActorLandingSpace landingSpace = null;
-		ActorUfo ufo = null;
 		
+		ActorUfo ufo = null;
+
 		if (actor1 instanceof ActorLandingSpace) {
 			landingSpace = (ActorLandingSpace) actor1;
 			ufo = (ActorUfo) actor2;
-		} else{
+		} else {
 			landingSpace = (ActorLandingSpace) actor2;
 			ufo = (ActorUfo) actor1;
 		}
@@ -34,7 +35,6 @@ public class VictoryCollisionListener implements GGActorCollisionListener {
 		GameTimer.getInstance().stopTimer();
 		difficultyScore = landingSpace.getDifficulty();
 		scoreCalculator.updateScore(difficultyScore, ufo.getFuel());
-
 		return 0;
 	}
 
