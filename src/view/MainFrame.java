@@ -14,6 +14,10 @@ import view.Screens.GameOverScreen;
 import view.Screens.StartScreenPanel;
 import view.Screens.VictoryScreen;
 
+/**
+ * Erstellt und fügt alle Panels zusammen.
+ */
+
 @SuppressWarnings("serial")
 public class MainFrame extends JFrame {
 
@@ -43,6 +47,10 @@ public class MainFrame extends JFrame {
 		setVisible(true);
 	}
 
+	/**
+	 * Bereitet das GameGrid und Menu Panel vor.
+	 */
+
 	public void start() {
 		remove(startScreenPanel);
 		MenuPanel menuPanel = new MenuPanel(playPanel, scorePanel);
@@ -65,12 +73,20 @@ public class MainFrame extends JFrame {
 		add(playPanel, BorderLayout.CENTER);
 	}
 
+	/**
+	 * Zeigt GameOver Screen.
+	 */
+
 	public void showGameOverScreen() {
 		remove(playPanel);
 		add(gameOverScreen);
 	}
+	
+	/**
+	 * Zeigt Victory Screen.
+	 */
 
-public void showVictoryScreen() {
+	public void showVictoryScreen() {
 		remove(playPanel);
 		add(victoryScreen);
 	}

@@ -10,10 +10,18 @@ import javax.swing.JPanel;
 
 import UtilityClasses.ImageLoader;
 
+/**
+ * Erstellt Startscreen Panel.
+ */
+
 @SuppressWarnings("serial")
 public class StartScreenPanel extends JPanel {
 
 	public JButton startButton;
+	
+	/**
+	 * Fügt Buttons in das Startscreen Panel.
+	 */
 	
 	public StartScreenPanel() {
 
@@ -39,7 +47,10 @@ public class StartScreenPanel extends JPanel {
 		add(quitButton);
 	}
 
-
+	/**
+	 * Setzt Hintergrund Bild.
+	 */
+	
 	@Override
 	protected void paintComponent(Graphics startScreenBackground) {
 

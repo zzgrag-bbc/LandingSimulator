@@ -6,6 +6,10 @@ import javax.swing.JPanel;
 
 import UtilityClasses.ImageLoader;
 
+/**
+ * Erstellt Victory Screen.
+ */
+
 @SuppressWarnings("serial")
 public class VictoryScreen extends JPanel {
 
@@ -13,6 +17,10 @@ public class VictoryScreen extends JPanel {
 		repaint();
 	}
 
+	/**
+	 * Setzt Hintergrund Bild.
+	 */
+	
 	@Override
 	protected void paintComponent(Graphics victoryScreenBackground) {
 

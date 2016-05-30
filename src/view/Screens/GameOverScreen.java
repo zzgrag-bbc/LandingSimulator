@@ -6,6 +6,10 @@ import javax.swing.JPanel;
 
 import UtilityClasses.ImageLoader;
 
+/**
+ * Design des GameOverScreens.
+ */
+
 @SuppressWarnings("serial")
 public class GameOverScreen extends JPanel {
 	
@@ -13,6 +17,10 @@ public class GameOverScreen extends JPanel {
 		repaint();
 	}
 
+	/**
+	 * Setzt Hintergrund Bild.
+	 */
+	
 	@Override
 	protected void paintComponent(Graphics startScreenBackground) {
 

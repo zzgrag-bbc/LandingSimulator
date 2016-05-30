@@ -37,7 +37,7 @@ public class GameGridPanel extends GameGrid {
 	private ActorUfo ufo = new ActorUfo(simulationPeriod);
 
 	/**
-	 * 
+	 * Erstellt Design, Musik des GameGrids
 	 */
 	
 	public GameGridPanel(Listener.GameOverCollisionListener gameOverCollisionListener,
@@ -58,10 +58,18 @@ public class GameGridPanel extends GameGrid {
 		setSimulationPeriod(simulationPeriod);
 	}
 
+	/**
+	 * Positioniert Ufo und fügt Key Listener.
+	 */
+	
 	public void prepareUfo() {
 		addActor(ufo, new Location(150, 10));
 		addKeyListener(ufo);
 	}
+	
+	/**
+	 * Bereitet Landschaft im GameGrid vor.
+	 */
 
 	public void prepareLandscape() {
 
@@ -90,6 +98,10 @@ public class GameGridPanel extends GameGrid {
 		ActorLandscape5.addCollisionActor(ufo);
 		ActorLandscape5.addActorCollisionListener(gameOverCollisionListener);
 	}
+	
+	/**
+	 * Bereitet Landschaft vor, wie Positionierung und Wert für Lande Plattformen.
+	 */
 
 	public void prepareLandingSpace() {
 
