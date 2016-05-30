@@ -1,5 +1,6 @@
 package Model;
 
+import java.awt.Point;
 import java.awt.event.KeyEvent;
 
 import ch.aplu.jgamegrid.Actor;
@@ -25,7 +26,7 @@ public class ActorUfo extends Actor implements GGKeyListener {
 
 	public ActorUfo(double simulationPeriod) {
 		super(false, "images/IngameScreen/ufo.png", 2);
-		
+		setCollisionCircle(new Point(1, 1), 42);
 		this.simulationPeriod = simulationPeriod;
 		new ControllerAdapter(this);
 	}

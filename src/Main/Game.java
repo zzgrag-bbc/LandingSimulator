@@ -1,5 +1,5 @@
+package Main;
 import java.awt.EventQueue;
-
 import Listener.GameOverCollisionListener;
 import Listener.VictoryCollisionListener;
 import Model.ScoreCalculator;
@@ -8,6 +8,10 @@ import view.MenuPanelContent.ScorePanel;
 import view.PlayPanelContent.PlayPanel;
 import view.Screens.GameOverScreen;
 import view.Screens.VictoryScreen;
+
+/**
+ * Kreiert alle Panels, welche später von Funktionen aufgerufen werden.
+ */
 
 public class Game {
 
@@ -20,6 +24,9 @@ public class Game {
 	private ScorePanel scorePanel = new ScorePanel();
 	private ScoreCalculator scoreCalculator;
 	
+	/**
+	 * 
+	 */
 	public Game()
 	{
 		scoreCalculator = new ScoreCalculator(scorePanel);
@@ -31,6 +38,10 @@ public class Game {
 		gameOverCollisionListener.setPlayPanelAndMainFrame(playPanel, mainFrame);
 		victoryCollisionListener.setPlayPanelAndMainFrame(playPanel, mainFrame, scoreCalculator );
 	}
+	
+	/**
+	 * Starpunkt der Applikation
+	 */
 	
 	public static void main(String[] args) {
 

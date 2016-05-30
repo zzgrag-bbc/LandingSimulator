@@ -1,7 +1,5 @@
 package view.PlayPanelContent;
 
-import java.awt.Point;
-
 import Model.ActorLandingSpace;
 import Model.ActorLandscape1;
 import Model.ActorLandscape2;
@@ -54,7 +52,7 @@ public class PlayPanel extends GameGrid {
 	public void prepareUfo() {
 		addActor(ufo, new Location(150, 10));
 		addKeyListener(ufo);
-		ufo.setCollisionCircle(new Point(1, 1), 42);
+		// ufo.setCollisionCircle(new Point(1, 1), 42);
 	}
 
 	public void prepareLandscape() {
