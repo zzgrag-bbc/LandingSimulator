@@ -27,6 +27,7 @@ public class Game {
 	/**
 	 * Erstellt Panels sowie Listeners.
 	 */
+	
 	public Game()
 	{
 		scoreCalculator = new ScoreCalculator(scorePanel);
@@ -41,6 +42,7 @@ public class Game {
 	
 	/**
 	 * Starpunkt der Applikation
+	 * @param args
 	 */
 	
 	public static void main(String[] args) {

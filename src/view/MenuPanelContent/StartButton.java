@@ -18,6 +18,7 @@ public class StartButton extends JButton {
 
 	/**
 	 * Erstellt das Design des Startbuttons sowie dessen Action Listener.
+	 * @param playPanel
 	 */
 	
 	public StartButton(GameGridPanel playPanel) {

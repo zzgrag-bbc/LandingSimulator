@@ -9,6 +9,7 @@ import view.PlayPanelContent.GameGridPanel;
 /**
  * GameOverCollisionListener ist ein GGActorCollisionListener, welcher von GameOverScreen aufgerufen wird.
  */
+
 public class GameOverCollisionListener implements GGActorCollisionListener
 {
 	private MainFrame mainFrame;
@@ -27,7 +28,10 @@ public class GameOverCollisionListener implements GGActorCollisionListener
 	
 	/**
 	 * Setzt das PlayPanel sowie das MainFrame, welches ihm mitgegeben wird.
+	 * @param playPanel
+	 * @param mainFrame
 	 */
+
 	public void setPlayPanelAndMainFrame(GameGridPanel playPanel, MainFrame mainFrame) {
 		this.playPanel = playPanel;
 		this.mainFrame = mainFrame;

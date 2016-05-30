@@ -148,6 +148,7 @@ public class ActorUfo extends Actor implements GGKeyListener {
 
 	/**
 	 * Begrenzung des Thrusts.
+	 * @param i
 	 */
 	
 	private void setThrust(int i) {
@@ -162,6 +163,7 @@ public class ActorUfo extends Actor implements GGKeyListener {
 
 	/**
 	 * Setter für die Steuerung des XBox Controllers.
+	 * @param accelerationY
 	 */
 	
 	public void setAccelerationY(double accelerationY) {
@@ -170,6 +172,7 @@ public class ActorUfo extends Actor implements GGKeyListener {
 	
 	/**
 	 * Setter für die Steuerung des XBox Controllers.
+	 * @param accelerationX
 	 */
 
 	public void setAccelerationX(double accelerationX) {
@@ -178,6 +181,7 @@ public class ActorUfo extends Actor implements GGKeyListener {
 	
 	/**
 	 * Getter für die Steuerung des XBox Controllers.
+	 * @return
 	 */
 
 	public double getAmax() {
@@ -186,6 +190,7 @@ public class ActorUfo extends Actor implements GGKeyListener {
 	
 	/**
 	 * Getter für die Steuerung des XBox Controllers.
+	 * @return
 	 */
 
 	public double getAccelerationX() {
@@ -194,6 +199,7 @@ public class ActorUfo extends Actor implements GGKeyListener {
 	
 	/**
 	 * Getter für die Steuerung des XBox Controllers.
+	 * @return
 	 */
 
 	public double getAccelerationY() {
@@ -202,6 +208,7 @@ public class ActorUfo extends Actor implements GGKeyListener {
 	
 	/**
 	 * Getter für die Steuerung des XBox Controllers.
+	 * @return
 	 */
 
 	public int getThrustLevel() {
@@ -210,6 +217,7 @@ public class ActorUfo extends Actor implements GGKeyListener {
 	
 	/**
 	 * Setter für die Steuerung des XBox Controllers.
+	 * @param thrustLevel
 	 */
 
 	public void setThrustLevel(int thrustLevel) {
@@ -218,6 +226,7 @@ public class ActorUfo extends Actor implements GGKeyListener {
 	
 	/**
 	 * Getter für die Steuerung des XBox Controllers.
+	 * @return
 	 */
 	
 	public int getFuel() {

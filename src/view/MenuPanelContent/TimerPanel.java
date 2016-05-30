@@ -15,7 +15,6 @@ import UtilityClasses.ImageLoader;
 /**
  * Kreiert einen Timer.
  */
-
 @SuppressWarnings("serial")
 public class TimerPanel extends JPanel {
 

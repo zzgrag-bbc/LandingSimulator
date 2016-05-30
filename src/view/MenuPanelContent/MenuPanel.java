@@ -32,6 +32,8 @@ public class MenuPanel extends ImagePanel {
 
 	/**
 	 *  Erstellt Instanzen und fügt Buttons dem Panel hinzu.
+	 * @param playPanel
+	 * @param scorePanel
 	 */
 	
 	public MenuPanel(GameGridPanel playPanel, ScorePanel scorePanel) {

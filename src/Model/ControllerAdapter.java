@@ -16,6 +16,7 @@ public class ControllerAdapter {
 
 	/**
 	 * Erstellt einen neuen Controller Adapter.
+	 * @param ufo
 	 */
 	
 	public ControllerAdapter(ActorUfo ufo) {

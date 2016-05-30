@@ -5,7 +5,6 @@ import ch.aplu.jgamegrid.Actor;
 /**
  * JGameGrid Actor.
  */
-
 public class ActorLandscape4 extends Actor {
 	
 	/**

@@ -38,6 +38,8 @@ public class GameGridPanel extends GameGrid {
 
 	/**
 	 * Erstellt Design, Musik des GameGrids
+	 * @param gameOverCollisionListener
+	 * @param victoryCollisionListener
 	 */
 	
 	public GameGridPanel(Listener.GameOverCollisionListener gameOverCollisionListener,

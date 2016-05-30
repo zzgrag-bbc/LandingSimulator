@@ -22,6 +22,7 @@ public class VictoryCollisionListener implements GGActorCollisionListener {
 	/**
 	 * Collide zeigt nachdem das Ufo gelandet ist den VictoryScreen, pausiert das Spiel sowie den Timer und updated den Score.
 	 */
+	
 	@Override
 	public int collide(Actor actor1, Actor actor2) {
 
@@ -47,6 +48,9 @@ public class VictoryCollisionListener implements GGActorCollisionListener {
 	
 	/**
 	 * Setzt das PlayPanel sowie das MainFrame, welches ihm mitgegeben wird.
+	 * @param playPanel
+	 * @param mainFrame
+	 * @param scoreCalculator
 	 */
 
 	public void setPlayPanelAndMainFrame(GameGridPanel playPanel, MainFrame mainFrame, ScoreCalculator scoreCalculator) {

@@ -9,6 +9,7 @@ import view.MenuPanelContent.TimerPanel;
 /**
  * Funktionalität des Timers.
  */
+
 public class GameTimer {
 
 	private static GameTimer instance;
@@ -31,6 +32,7 @@ public class GameTimer {
 
 	/**
 	 * Setter für Timer Panel.
+	 * @param timerPanel
 	 */
 	
 	public void setTimerPanel(TimerPanel timerPanel)
@@ -65,7 +67,9 @@ public class GameTimer {
 
 	/**
 	 * Wandelt vergagene Zeit in Sekunden um.
+	 * @return
 	 */
+
 	
 	public int getPassedTimeInSeconds()
 	{

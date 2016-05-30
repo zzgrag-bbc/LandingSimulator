@@ -14,7 +14,6 @@ import UtilityClasses.ImageLoader;
 /**
  * Erstellt das Fuel Panel.
  */
-
 @SuppressWarnings("serial")
 public class FuelPanel extends JPanel {
 
