@@ -5,7 +5,7 @@ import Listener.VictoryCollisionListener;
 import Model.ScoreCalculator;
 import view.MainFrame;
 import view.MenuPanelContent.ScorePanel;
-import view.PlayPanelContent.PlayPanel;
+import view.PlayPanelContent.GameGridPanel;
 import view.Screens.GameOverScreen;
 import view.Screens.VictoryScreen;
 
@@ -17,7 +17,7 @@ public class Game {
 
 	private GameOverScreen gameOverScreen = new GameOverScreen();
 	private VictoryScreen victoryScreen = new VictoryScreen();
-	private PlayPanel playPanel;
+	private GameGridPanel playPanel;
 	private GameOverCollisionListener gameOverCollisionListener;
 	private VictoryCollisionListener victoryCollisionListener;
 	private MainFrame mainFrame;
@@ -25,14 +25,14 @@ public class Game {
 	private ScoreCalculator scoreCalculator;
 	
 	/**
-	 * 
+	 * Erstellt Panels sowie Listeners.
 	 */
 	public Game()
 	{
 		scoreCalculator = new ScoreCalculator(scorePanel);
 		gameOverCollisionListener = new GameOverCollisionListener();
 		victoryCollisionListener = new VictoryCollisionListener();
-		playPanel = new PlayPanel(gameOverCollisionListener, victoryCollisionListener);
+		playPanel = new GameGridPanel(gameOverCollisionListener, victoryCollisionListener);
 		mainFrame = new MainFrame(playPanel, gameOverScreen, victoryScreen, scorePanel);
 		
 		gameOverCollisionListener.setPlayPanelAndMainFrame(playPanel, mainFrame);

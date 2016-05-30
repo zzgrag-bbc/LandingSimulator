@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 
 import view.MenuPanelContent.MenuPanel;
 import view.MenuPanelContent.ScorePanel;
-import view.PlayPanelContent.PlayPanel;
+import view.PlayPanelContent.GameGridPanel;
 import view.Screens.GameOverScreen;
 import view.Screens.StartScreenPanel;
 import view.Screens.VictoryScreen;
@@ -18,12 +18,12 @@ import view.Screens.VictoryScreen;
 public class MainFrame extends JFrame {
 
 	private StartScreenPanel startScreenPanel;
-	private PlayPanel playPanel;
+	private GameGridPanel playPanel;
 	private GameOverScreen gameOverScreen;
 	private VictoryScreen victoryScreen;
 	private ScorePanel scorePanel;
 
-	public MainFrame(PlayPanel playPanel, GameOverScreen gameOverScreen, VictoryScreen victoryScreen,
+	public MainFrame(GameGridPanel playPanel, GameOverScreen gameOverScreen, VictoryScreen victoryScreen,
 			ScorePanel scorePanel) {
 		this.playPanel = playPanel;
 		this.gameOverScreen = gameOverScreen;

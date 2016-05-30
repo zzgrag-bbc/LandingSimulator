@@ -7,11 +7,18 @@ import java.net.URL;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
+/**
+ * Image Loader
+ */
+
 public class ImageLoader {
 
-	// Loads Images
 	private static final String IMAGE_LOCATION = "src/images/";
 
+	/**
+	 * Verwendet ImagePath sowie Namen um es zu laden.
+	 */
+	
 	public static Image Image(String imageName) {
 		String path = IMAGE_LOCATION + imageName;
 		File tempFile = new File(path);
@@ -21,10 +28,12 @@ public class ImageLoader {
 			System.out.println("Error: File does not exist or could not be found.");
 			return null;
 		}
-
 	}
 
-	// Loads Icons
+	/**
+	 * Verwendet IconPath sowie Namen um es zu laden.
+	 */
+	
 	public static Icon loadIcon(String iconName) {
 		final URL resource = ImageLoader.class.getResource("/images/" + iconName);
 

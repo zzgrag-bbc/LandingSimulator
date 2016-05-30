@@ -6,8 +6,8 @@ import java.util.TimerTask;
 
 import view.MenuPanelContent.TimerPanel;
 
-/*
- * Singleton-Pattern
+/**
+ * Funktionalität des Timers.
  */
 public class GameTimer {
 
@@ -22,9 +22,6 @@ public class GameTimer {
 		
 		return instance;
 	}
-	
-	public GameTimer() {}
-	
 
 	private int sekundenZähler = 0;
 	private int minutenZähler = 0;
@@ -32,10 +29,18 @@ public class GameTimer {
 	private TimerTask task;
 	private TimerPanel timerPanel;
 
+	/**
+	 * Setter für Timer Panel.
+	 */
+	
 	public void setTimerPanel(TimerPanel timerPanel)
 	{
 		this.timerPanel = timerPanel;
 	}
+	
+	/**
+	 * Startet den Timer.
+	 */
 	
 	public void start() {
 		
@@ -49,15 +54,27 @@ public class GameTimer {
 		timer.scheduleAtFixedRate(task, 0, 1000);
 	}
 	
+	/**
+	 * Lässt den Timer stoppen.
+	 */
+	
 	public void stopTimer()
 	{
 		task.cancel();
 	}
 
+	/**
+	 * Wandelt vergagene Zeit in Sekunden um.
+	 */
+	
 	public int getPassedTimeInSeconds()
 	{
 		return sekundenZähler + (minutenZähler * 60) + (stundenZähler * 60 * 60);
 	}
+	
+	/**
+	 * Formattiert und updated Zeit.
+	 */
 	
 	private void upateAndGetFormatedTime() {
 

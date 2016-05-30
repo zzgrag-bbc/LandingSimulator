@@ -7,12 +7,16 @@ import javax.swing.JButton;
 
 import Model.GameTimer;
 import UtilityClasses.ImageLoader;
-import view.PlayPanelContent.PlayPanel;
+import view.PlayPanelContent.GameGridPanel;
+
+/**
+ * Restart Button.
+ */
 
 @SuppressWarnings("serial")
 public class RestartButton extends JButton {
-
-	public RestartButton(PlayPanel playPanel) {
+	
+	public RestartButton(GameGridPanel playPanel) {
 
 		// Design of Start Button
 		setContentAreaFilled(false);

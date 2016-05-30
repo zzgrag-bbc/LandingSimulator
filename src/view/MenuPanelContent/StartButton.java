@@ -7,12 +7,20 @@ import javax.swing.JButton;
 
 import Model.GameTimer;
 import UtilityClasses.ImageLoader;
-import view.PlayPanelContent.PlayPanel;
+import view.PlayPanelContent.GameGridPanel;
+
+/**
+ * Setzt dem Startbutton.
+ */
 
 @SuppressWarnings("serial")
 public class StartButton extends JButton {
 
-	public StartButton(PlayPanel playPanel) {
+	/**
+	 * Erstellt das Design des Startbuttons sowie dessen Action Listener.
+	 */
+	
+	public StartButton(GameGridPanel playPanel) {
 
 		// Design of Start Button
 		setContentAreaFilled(false);

@@ -11,9 +11,13 @@ import javax.swing.border.LineBorder;
 
 import UtilityClasses.ImageLoader;
 
+/**
+ * Erstellt das Fuel Panel.
+ */
+
 @SuppressWarnings("serial")
 public class FuelPanel extends JPanel {
-	
+
 	// Fuel Bar
 	public static JProgressBar fuel = new JProgressBar(0, 700);
 
@@ -22,6 +26,10 @@ public class FuelPanel extends JPanel {
 	JLabel eastFuel = new JLabel(ImageLoader.loadIcon("Menupanel/west_east.png"));
 	JLabel southFuel = new JLabel(ImageLoader.loadIcon("Menupanel/south.png"));
 	JLabel westFuel = new JLabel(ImageLoader.loadIcon("Menupanel/west_east.png"));
+
+	/**
+	 * Design des FuelPanels.
+	 */
 
 	public FuelPanel() {
 
@@ -45,6 +53,5 @@ public class FuelPanel extends JPanel {
 	public static JProgressBar getFuel() {
 		return fuel;
 	}
-	
-	
+
 }

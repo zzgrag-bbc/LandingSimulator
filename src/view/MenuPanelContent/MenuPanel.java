@@ -11,7 +11,11 @@ import javax.swing.JPanel;
 import Model.GameTimer;
 import UtilityClasses.ImageLoader;
 import UtilityClasses.ImagePanel;
-import view.PlayPanelContent.PlayPanel;
+import view.PlayPanelContent.GameGridPanel;
+
+/**
+ * Menupanel welches Sub Panels beinhaltet.
+ */
 
 @SuppressWarnings("serial")
 public class MenuPanel extends ImagePanel {
@@ -26,7 +30,11 @@ public class MenuPanel extends ImagePanel {
 	private JPanel scorePanel;
 	private TimerPanel timerPanel;
 
-	public MenuPanel(PlayPanel playPanel, ScorePanel scorePanel) {
+	/**
+	 *  Erstellt Instanzen und fügt Buttons dem Panel hinzu.
+	 */
+	
+	public MenuPanel(GameGridPanel playPanel, ScorePanel scorePanel) {
 
 		super(BACKGROUND);
 		

@@ -5,16 +5,23 @@ import javax.swing.JOptionPane;
 import ch.aplu.xboxcontroller.XboxController;
 import ch.aplu.xboxcontroller.XboxControllerAdapter;
 
+/**
+ * Adapter Klasse für den XBox Controller.
+ */
+
 public class ControllerAdapter {
 
 	private XboxController xBoxController;
 	private ActorUfo actorUfo;
 
+	/**
+	 * Erstellt einen neuen Controller Adapter.
+	 */
+	
 	public ControllerAdapter(ActorUfo ufo) {
 
 		xBoxController = new XboxController();
 		actorUfo = ufo;
-		
 
 		if (!xBoxController.isConnected()) {
 			JOptionPane.showMessageDialog(null, "Xbox controller not connected.", "Fatal error",
@@ -22,6 +29,10 @@ public class ControllerAdapter {
 			xBoxController.release();
 			return;
 		}
+		
+		/**
+		 * Funktionalität des Controllers.
+		 */
 		
 		xBoxController.addXboxControllerListener(new XboxControllerAdapter() {
 			double da = 0.4;

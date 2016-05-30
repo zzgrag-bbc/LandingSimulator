@@ -12,6 +12,10 @@ import javax.swing.border.LineBorder;
 
 import UtilityClasses.ImageLoader;
 
+/**
+ * Erstellt das Score Panel.
+ */
+
 @SuppressWarnings("serial")
 public class ScorePanel extends JPanel {
 
@@ -21,7 +25,11 @@ public class ScorePanel extends JPanel {
 	private JLabel southScore = new JLabel(ImageLoader.loadIcon("Menupanel/south.png"));
 	private JLabel westScore = new JLabel(ImageLoader.loadIcon("Menupanel/west_east.png"));
 	private JTextArea textArea;
-
+	
+	/**
+	 * Setzt das ScorePanel Design sowie den Start Wert.
+	 */
+	
 	public ScorePanel() {
 
 		// TextArea to display Score

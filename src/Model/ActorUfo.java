@@ -8,6 +8,9 @@ import ch.aplu.jgamegrid.GGKeyListener;
 import ch.aplu.jgamegrid.Location;
 import view.MenuPanelContent.FuelPanel;
 
+/**
+ * JGameGrid Actor Ufo.
+ */
 public class ActorUfo extends Actor implements GGKeyListener {
 
 	private final double startFuel = 700; // Amount of fuel at start
@@ -31,6 +34,10 @@ public class ActorUfo extends Actor implements GGKeyListener {
 		new ControllerAdapter(this);
 	}
 
+	/**
+	 * Stellt die velocity sowie acceleration zurück auf null.
+	 */
+	
 	// Reset Method always called before starting
 	public void reset() {
 
@@ -47,6 +54,10 @@ public class ActorUfo extends Actor implements GGKeyListener {
 		isLanded = false;
 	}
 
+	/**
+	 * Setzt dass Ufo in Bewegung.
+	 */
+	
 	public void act() {
 
 		setDirection(Location.SOUTH);
@@ -71,20 +82,11 @@ public class ActorUfo extends Actor implements GGKeyListener {
 			accelerationY = amax;
 			setThrust(0);
 		}
-
-//		if (getLocation().y > 490 && !isLanded) {
-//
-//			if (velocityY > 10.0) {
-//				ufoCrashed.setLocation(new Location(getLocation().x, getLocation().y + 30));
-//				ufoCrashed.show();
-//				hide();
-//			}
-//			setActEnabled(false);
-//			thrustLevel = 0;
-//			setThrust(0);
-//			isLanded = true;
-//		}
 	}
+	
+	/**
+	 * Ist für die Steuerung zuständig. Funktioniert mit der Tastatur.
+	 */
 
 	public boolean keyPressed(KeyEvent evt) {
 
@@ -144,6 +146,10 @@ public class ActorUfo extends Actor implements GGKeyListener {
 		return true;
 	}
 
+	/**
+	 * Begrenzung des Thrusts.
+	 */
+	
 	private void setThrust(int i) {
 		if (i < 0) {
 			i = 0;
@@ -154,33 +160,65 @@ public class ActorUfo extends Actor implements GGKeyListener {
 		}
 	}
 
+	/**
+	 * Setter für die Steuerung des XBox Controllers.
+	 */
+	
 	public void setAccelerationY(double accelerationY) {
 		this.accelerationY = accelerationY;
 	}
+	
+	/**
+	 * Setter für die Steuerung des XBox Controllers.
+	 */
 
 	public void setAccelerationX(double accelerationX) {
 		this.accelerationX = accelerationX;
 	}
+	
+	/**
+	 * Getter für die Steuerung des XBox Controllers.
+	 */
 
 	public double getAmax() {
 		return amax;
 	}
+	
+	/**
+	 * Getter für die Steuerung des XBox Controllers.
+	 */
 
 	public double getAccelerationX() {
 		return accelerationX;
 	}
+	
+	/**
+	 * Getter für die Steuerung des XBox Controllers.
+	 */
 
 	public double getAccelerationY() {
 		return accelerationY;
 	}
+	
+	/**
+	 * Getter für die Steuerung des XBox Controllers.
+	 */
 
 	public int getThrustLevel() {
 		return thrustLevel;
 	}
+	
+	/**
+	 * Setter für die Steuerung des XBox Controllers.
+	 */
 
 	public void setThrustLevel(int thrustLevel) {
 		this.thrustLevel = thrustLevel;
 	}
+	
+	/**
+	 * Getter für die Steuerung des XBox Controllers.
+	 */
 	
 	public int getFuel() {
 		 return (int) fuel;

@@ -12,6 +12,10 @@ import javax.swing.border.LineBorder;
 
 import UtilityClasses.ImageLoader;
 
+/**
+ * Kreiert einen Timer.
+ */
+
 @SuppressWarnings("serial")
 public class TimerPanel extends JPanel {
 
@@ -23,6 +27,10 @@ public class TimerPanel extends JPanel {
 	private JLabel southTimer = new JLabel(ImageLoader.loadIcon("Menupanel/south.png"));
 	private JLabel westTimer = new JLabel(ImageLoader.loadIcon("Menupanel/west_east.png"));
 
+	/**
+	 * Setzt das Design des Timers.
+	 */
+	
 	public TimerPanel() {
 
 		// Border & Font

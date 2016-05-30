@@ -7,9 +7,17 @@ import javax.swing.JButton;
 
 import UtilityClasses.ImageLoader;
 
+/**
+ * Erstellt den Quitt Button.
+ */
+
 @SuppressWarnings("serial")
 public class QuitButton extends JButton {
 
+	/**
+	 * Beinhaltet das Button Design sowie den ActionListener.
+	 */
+	
 	public QuitButton() {
 
 		// Design of QUIT Button

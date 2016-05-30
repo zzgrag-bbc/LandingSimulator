@@ -8,7 +8,9 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-//Class made for implement images into JPanels
+/**
+ * Neu erstellte Klasse um JPanels Bilder als Hintergrund zu setzen.
+ */
 
 @SuppressWarnings("serial")
 public class ImagePanel extends JPanel {
@@ -19,6 +21,10 @@ public class ImagePanel extends JPanel {
 		this(((ImageIcon) img).getImage());
 	}
 
+	/**
+	 * Lässt die Grösse des Bildes bestimmen sowie das Layout.
+	 */
+	
 	public ImagePanel(Image img) {
 		this.img = img;
 		Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));

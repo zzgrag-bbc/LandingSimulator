@@ -4,7 +4,7 @@ import Model.GameTimer;
 import ch.aplu.jgamegrid.Actor;
 import ch.aplu.jgamegrid.GGActorCollisionListener;
 import view.MainFrame;
-import view.PlayPanelContent.PlayPanel;
+import view.PlayPanelContent.GameGridPanel;
 
 /**
  * GameOverCollisionListener ist ein GGActorCollisionListener, welcher von GameOverScreen aufgerufen wird.
@@ -12,7 +12,7 @@ import view.PlayPanelContent.PlayPanel;
 public class GameOverCollisionListener implements GGActorCollisionListener
 {
 	private MainFrame mainFrame;
-	private PlayPanel playPanel;
+	private GameGridPanel playPanel;
 
 	/**
 	 * Collide zeigt nachdem das Ufo gecrasht ist den GameOverScreen, pausiert das Spiel sowie den Timer.
@@ -28,7 +28,7 @@ public class GameOverCollisionListener implements GGActorCollisionListener
 	/**
 	 * Setzt das PlayPanel sowie das MainFrame, welches ihm mitgegeben wird.
 	 */
-	public void setPlayPanelAndMainFrame(PlayPanel playPanel, MainFrame mainFrame) {
+	public void setPlayPanelAndMainFrame(GameGridPanel playPanel, MainFrame mainFrame) {
 		this.playPanel = playPanel;
 		this.mainFrame = mainFrame;
 	}

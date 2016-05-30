@@ -7,7 +7,7 @@ import Model.ScoreCalculator;
 import ch.aplu.jgamegrid.Actor;
 import ch.aplu.jgamegrid.GGActorCollisionListener;
 import view.MainFrame;
-import view.PlayPanelContent.PlayPanel;
+import view.PlayPanelContent.GameGridPanel;
 
 /**
  * VictoryCollisionListener ist ein GGActorCollisionListener, welcher von VictoryScreen aufgerufen wird.
@@ -16,7 +16,7 @@ import view.PlayPanelContent.PlayPanel;
 public class VictoryCollisionListener implements GGActorCollisionListener {
 	private int difficultyScore;
 	private MainFrame mainFrame;
-	private PlayPanel playPanel;
+	private GameGridPanel playPanel;
 	private ScoreCalculator scoreCalculator;
 
 	/**
@@ -49,7 +49,7 @@ public class VictoryCollisionListener implements GGActorCollisionListener {
 	 * Setzt das PlayPanel sowie das MainFrame, welches ihm mitgegeben wird.
 	 */
 
-	public void setPlayPanelAndMainFrame(PlayPanel playPanel, MainFrame mainFrame, ScoreCalculator scoreCalculator) {
+	public void setPlayPanelAndMainFrame(GameGridPanel playPanel, MainFrame mainFrame, ScoreCalculator scoreCalculator) {
 		this.playPanel = playPanel;
 		this.mainFrame = mainFrame;
 		this.scoreCalculator = scoreCalculator;
