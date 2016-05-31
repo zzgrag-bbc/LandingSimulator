@@ -48,9 +48,9 @@ public class VictoryCollisionListener implements GGActorCollisionListener {
 	
 	/**
 	 * Setzt das PlayPanel sowie das MainFrame, welches ihm mitgegeben wird.
-	 * @param playPanel
-	 * @param mainFrame
-	 * @param scoreCalculator
+	 * @param playPanel Gibt das GameGrid mit.
+	 * @param mainFrame Gibt das MainFrame mit.
+	 * @param scoreCalculator Gibt den ScoreCalculator mit.
 	 */
 
 	public void setPlayPanelAndMainFrame(GameGridPanel playPanel, MainFrame mainFrame, ScoreCalculator scoreCalculator) {

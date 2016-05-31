@@ -17,8 +17,8 @@ public class ImageLoader {
 
 	/**
 	 * Verwendet ImagePath sowie Namen um es zu laden.
-	 * @param imageName
-	 * @return
+	 * @param imageName Name des Bildes.
+	 * @return Wirft Exception falls etwas nicht stimmt.
 	 */
 	
 	public static Image Image(String imageName) {
@@ -34,8 +34,8 @@ public class ImageLoader {
 
 	/**
 	 * Verwendet IconPath sowie Namen um es zu laden.
-	 * @param iconName
-	 * @return
+	 * @param iconName Name des Icons.
+	 * @return Wirft Exception falls etwas nicht stimmt.
 	 */
 	
 	public static Icon loadIcon(String iconName) {

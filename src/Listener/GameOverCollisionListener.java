@@ -28,8 +28,8 @@ public class GameOverCollisionListener implements GGActorCollisionListener
 	
 	/**
 	 * Setzt das PlayPanel sowie das MainFrame, welches ihm mitgegeben wird.
-	 * @param playPanel
-	 * @param mainFrame
+	 * @param playPanel Gibt das GameGrid mit.
+	 * @param mainFrame Gibt das MainFrame mit.
 	 */
 
 	public void setPlayPanelAndMainFrame(GameGridPanel playPanel, MainFrame mainFrame) {

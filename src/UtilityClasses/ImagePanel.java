@@ -23,7 +23,7 @@ public class ImagePanel extends JPanel {
 
 	/**
 	 * Lässt die Grösse des Bildes bestimmen sowie das Layout.
-	 * @param img
+	 * @param img Braucht Bild Wert.
 	 */
 	
 	public ImagePanel(Image img) {

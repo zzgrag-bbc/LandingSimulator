@@ -16,8 +16,8 @@ public class ScoreCalculator {
 
 	/**
 	 * Updated den Score.
-	 * @param difficultyScore
-	 * @param remainingFuel
+	 * @param difficultyScore Braucht Difficulty Wert.
+	 * @param remainingFuel Braucht übrigen Fuel Wert.
 	 */
 	
 	public void updateScore(int difficultyScore, int remainingFuel) {
@@ -26,9 +26,9 @@ public class ScoreCalculator {
 	
 	/**
 	 * Rechnet den Score aus.
-	 * @param difficulty
-	 * @param remainingFuel
-	 * @return
+	 * @param difficulty Braucht Difficulty Wer.
+	 * @param remainingFuel Braucht übrigen Fuel Wert.
+	 * @return Gibt Score Wert zurück.
 	 */
 
 	private int calculateScore(int difficulty, int remainingFuel) {

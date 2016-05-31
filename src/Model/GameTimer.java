@@ -32,7 +32,7 @@ public class GameTimer {
 
 	/**
 	 * Setter für Timer Panel.
-	 * @param timerPanel
+	 * @param timerPanel Braucht TimerPanel.
 	 */
 	
 	public void setTimerPanel(TimerPanel timerPanel)
@@ -67,9 +67,8 @@ public class GameTimer {
 
 	/**
 	 * Wandelt vergagene Zeit in Sekunden um.
-	 * @return
+	 * @return Gibt Sekunden zurück.
 	 */
-
 	
 	public int getPassedTimeInSeconds()
 	{

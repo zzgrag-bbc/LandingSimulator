@@ -42,7 +42,7 @@ public class Game {
 	
 	/**
 	 * Starpunkt der Applikation
-	 * @param args
+	 * @param args Main Methode.
 	 */
 	
 	public static void main(String[] args) {
