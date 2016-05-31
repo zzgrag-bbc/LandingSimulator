@@ -42,10 +42,9 @@ public class ImageLoader {
 		final URL resource = ImageLoader.class.getResource("/images/" + iconName);
 
 		if (resource == null) {
-			// TODO Replace by logger
 			System.err.println(
 					"Error in " + ImageLoader.class.getName() + ": Icon /images/" + iconName + " could not be loaded.");
-			return new ImageIcon();
+			return null;
 		}
 		return new ImageIcon(resource);
 	}
